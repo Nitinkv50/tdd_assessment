@@ -58,6 +58,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+   
+  # rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest. 
+  gem 'rspec-rails'
 end
 
 group :test do
