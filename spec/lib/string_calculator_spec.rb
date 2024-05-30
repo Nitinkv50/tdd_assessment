@@ -45,5 +45,17 @@ describe StringCalculator do
     it "handles a sequence of five numbers" do
       expect(string_calculator.add("1,2,3,4,5")).to eq(15)
     end
+
+    it "handles new lines between numbers" do
+      expect(string_calculator.add("1\n2,3")).to eq(6)
+    end
+
+    it "handles multiple new lines between numbers" do
+      expect(string_calculator.add("1\n2\n3")).to eq(6)
+    end
+
+    it "handles mixed commas and new lines" do
+      expect(string_calculator.add("1,2\n3,4\n5")).to eq(15)
+    end
   end
 end
