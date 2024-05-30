@@ -57,5 +57,21 @@ describe StringCalculator do
     it "handles mixed commas and new lines" do
       expect(string_calculator.add("1,2\n3,4\n5")).to eq(15)
     end
+
+    it "handles custom delimiter" do
+      expect(string_calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it "handles custom delimiter with multiple numbers" do
+      expect(string_calculator.add("//|\n1|2|3")).to eq(6)
+    end
+
+    it "handles custom delimiter with newlines" do
+      expect(string_calculator.add("//;\n1;2\n3")).to eq(6)
+    end
+
+    it "handles custom delimiter with commas and newlines" do
+      expect(string_calculator.add("//;\n1;2,3\n4")).to eq(10)
+    end
   end
 end
